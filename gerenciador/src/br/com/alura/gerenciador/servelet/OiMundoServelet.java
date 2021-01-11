@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(urlPatterns = "/oi") //Não basta estender a classe HttpServlet, também devemos configurar a URL através da anotação @WebServlet.
+@WebServlet(urlPatterns = "/oi") //Não basta estender a classe HttpServlet, também devemos configurar a URL através da anotação @WebServlet. mapeamento do servelet
 public class OiMundoServelet extends HttpServlet{
 
 	@Override
