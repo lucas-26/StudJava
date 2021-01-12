@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class listaEmpresasServlet
- */
 @WebServlet("/listaEmpresasServlet")
 public class listaEmpresasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +19,9 @@ public class listaEmpresasServlet extends HttpServlet {
 		
 		Banco banco = new Banco();
 		List<Empresa> lista = banco.getEmpresas();
+		
 		request.setAttribute("empresas", lista);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/ListaEmpresas.jsp");
 		rd.forward(request, response);
 
