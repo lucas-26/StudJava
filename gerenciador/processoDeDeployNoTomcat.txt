@@ -1,0 +1,6 @@
+para gerar o deploy 
+1° botão direito em cima do projeto -> Export -> WAR file
+2° Jogar o arquivo .WAR ma pasta que se encontra o servidor tomcat
+3° Em seguida jogar essa pasta dentro da pasta de deploy, no tomcat essa pasta de chama "webapps"
+4° agora na linha de comando vá para a pasta que está o servidor em seguida entre na pasta bin, na linha de comando dentro da pasta bin, use o comando startup.bat
+5° Uma nova janela vai abrir, sinal que seu certo o deploy.
