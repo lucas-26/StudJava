@@ -1,22 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ page import="java.util.List, br.com.alura.gerenciador.servelet.*"%>
+ <%@page import="java.util.List, br.com.alura.gerenciador.servelet.*"%>
+ <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Java Standard TagLib</title>
 </head>
 <body>
-	<ul>
-		<%
-		List<Empresa> lista = (List<Empresa>)request.getAttribute("empresas"); //um Scriplet, não é uma boa pratica
-			for(Empresa empresa: lista){
-		%>
-				<li><%= empresa.getNome() %></li>
-			<%
-			}
-		%>
+
+	Lista de Empresas: <br/>
+	
+	<ul> 
+		<c:forEach items="${empresas}" var="empresa">  <%//aqui estamos usando jstl com expression language  jstl -> <c:forEach items=  expression language -> ${empresas} %>
+		<li>${empresa.nome } - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/></li>
+		</c:forEach>
 	</ul>
 </body>
 </html>

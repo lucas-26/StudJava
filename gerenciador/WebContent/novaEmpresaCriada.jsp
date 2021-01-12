@@ -1,11 +1,7 @@
-<%
-	//o nome disso aqui é scriplet, código java no html
-	String nomeEmpresa = (String)request.getAttribute("empresa");//usando o apelido que é enviado pelo NovaEmpresaServelet, retorna um objeto, então é necessário fazer um cast para string 
-	System.out.println(nomeEmpresa);
-%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Empresa <%= nomeEmpresa %> cadastrada com sucesso! 
+	<c:if test="${not empty empresa}">
+		Empresa ${ empresa } cadastrada com sucesso!
+	</c:if>
+	<c:if test="${empty empresa}">
+		nenhuma empresa cadastrada!
+	</c:if> 
 </body>
 </html>

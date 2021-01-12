@@ -2,6 +2,9 @@ package br.com.alura.gerenciador.servelet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,13 +28,25 @@ public class NovaEmpresaServelet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String nomeEmpresa = request.getParameter("nome");
+		String dataEmpresa = request.getParameter("data");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		Date dataAbertura=null;
+		
+		try {
+			dataAbertura = sdf.parse(dataEmpresa);
+		} 
+		catch (ParseException e) {
+			throw new ServletException(e);
+		}
+		
 		Empresa empresa = new Empresa();
 		empresa.setNome(nomeEmpresa);
+		empresa.setDataAbertura(dataAbertura);
 		
 		Banco banco = new Banco();
 		banco.adicionar(empresa); 
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");//preparando para enviar a requisição para o meu jsp
+		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");//preparando para enviar a requisição para o meu jsp/ Obtemos o RequestDispatcher a partir do HttpServletRequest
 		request.setAttribute("empresa", empresa.getNome());//empresa é o apelido que vai ser usado no jsp quando formos pegar o valor lá, o empresa.getnome é o valor
 		rd.forward(request, response);//enviando de fato essa requisição
 	}
