@@ -3,6 +3,7 @@ package br.com.alura.gerenciador.servelet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,14 +27,13 @@ public class NovaEmpresaServelet extends HttpServlet {
 		String nomeEmpresa = request.getParameter("nome");
 		Empresa empresa = new Empresa();
 		empresa.setNome(nomeEmpresa);
+		
 		Banco banco = new Banco();
 		banco.adicionar(empresa); 
-		PrintWriter out = response.getWriter();
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Empresa " + nomeEmpresa  + " cadastrada com sucesso");
-		out.println("</body>");
-		out.println("</html>");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");//preparando para enviar a requisição para o meu jsp
+		request.setAttribute("empresa", empresa.getNome());//empresa é o apelido que vai ser usado no jsp quando formos pegar o valor lá, o empresa.getnome é o valor
+		rd.forward(request, response);//enviando de fato essa requisição
 	}
 
 }
