@@ -1,0 +1,22 @@
+O HTTPS para garantir segurança usa criptografia 
+baseada em chaves públicas e privadas e para gerar essas 
+chaves publicas e privadas é preciso garantir a identidade de
+quem possui essas chaves e isso é feito a partir de um certificado digital, 
+ou seja, um certificado digital é utilizado para identificar determinada entidade e
+ainda é utilizada para geração das chaves de criptografia.
+
+Só com HTTPS a web é segura.
+HTTPS significa usar um certificado digital no servidor.
+O certificado prova a identidade e tem validade
+O certificado possui uma chave publica.
+A chave é utilizada pelo navegador para criptografar os dados.
+
+Por padrão, os dados são trafegados como texto puro na web.
+Apenas com HTTPS a Web é segura
+O protocolo HTTPS nada mais é do que o protocolo HTTP mais uma camada adicional de segurança, a TLS/SSL
+O tipo de criptografia de chave pública/chave privada
+O que são os certificados digitais
+Certificados possuem identidade e validade
+As chaves públicas estão no certificado, a chave privada fica apenas no servidor
+O que é uma autoridade certificadora
+O navegador utiliza a chave pública para criptografar os dados

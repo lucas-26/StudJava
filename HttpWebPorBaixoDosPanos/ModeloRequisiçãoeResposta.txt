@@ -1,0 +1,15 @@
+O HTTP usa sessões para salvar informações do usuário
+Sessões só são possíveis por uso de Cookies
+Cookies são pequenos arquivos que guardam informações no navegador
+O HTTP é stateless, não mantem estado.
+
+Uma requisição sempre deve ser enviada com todas as informações
+necessárias, o que faz uma requisição ser sempre independente das demais.
+
+Uma sessão HTTP É o tempo que o cliente utiliza um web app.
+
+O protocolo HTTP segue o modelo Requisição-Resposta
+Sempre o cliente inicia a comunicação
+Uma requisição precisa ter todas as informações para o servidor gerar a resposta
+HTTP é stateless, não mantém informações entre requisições
+As plataformas de desenvolvimento usam sessões para guardar informações entre requisições

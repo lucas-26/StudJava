@@ -1,0 +1,45 @@
+O protocolo que estamos trabalhando até agora foi especificado na década de 90 e de lá até hoje
+ muitas alterações foram feitas até na forma como usamos a internet.
+
+Com a chegada do mundo mobile novas preocupações apareceram e otimizações são cada vez mais
+ necessárias para uma boa performance. Por isso uma mudança foi necessária e em 2015 depois de
+  alguns anos de especificações e reuniões surgiu a versão 2 desse protocolo.
+
+A nova versão é batizada de HTTP/2 e tem como página principal de documentação
+e referência essa: https://http2.github.io/.
+
+A nova versão do protocolo HTTP traz mudanças fundamentais para a Web.
+ Recursos fantásticos que vão melhorar muito a performance da Web além de simplificar
+  a vida dos desenvolvedores.
+
+No HTTP 1.1, para melhorar a performance, habilitamos o GZIP no servidor
+ para comprimir os dados das respostas. É uma excelente prática, mas que precisa ser
+  habilitada explicitamente. No HTTP/2, o GZIP é padrão e obrigatório.
+
+Mas, se você já olhou como funciona uma requisição HTTP, vai notar que só GZIPar
+ as respostas resolve só metade do problema. Tanto o request quanto o response levam vários
+  cabeçalhos (headers) que não são comprimidos no HTTP 1.1 e ainda viajam em texto puro.
+
+Além de binários eles são comprimidos usando um algoritmo chamado HPACK.
+ Isso diminui bastante o volume de dados trafegados nos headers.
+
+Além de todas essas otimizações para melhorar a performance ainda houve uma preocupação com
+ segurança exigindo TLS por padrão também.
+
+ HPACK ->  a tecnologia HPACK é especialista em comprimir os Headers da requisições/respostas HTTP, 
+ deixando as mais leves.
+
+ Headers Stateful -> Como trafegamos apenas os headers que mudam de uma requisição para outra,
+  acabamos por economizar uma boa quantidade de dados,  pois não precisamos enviar headers que mudam
+   poucas vezes a todo momento, como o Accept.
+
+Server Push ->  
+O servidor pode empurrar para o clientes certos recursos antes mesmo de serem solicitados, 
+pois ele consegue analisar o HTML e ver o que mais é preciso para carregar a página fazendo
+ com que não seja necessário gastar tempo pedindo todos os outros recursos.
+
+Multiplexação -> O Keep-Alive(requisição <=> Aguarda a resposta) continua existindo no HTTP2, só que ele trouxe uma novidade. 
+Por exemplo, se temos uma conexão TCP aberta e realizamos uma requisição, poderíamos já dar
+ prosseguimento às próximas requisições, isso em paralelo, sem de fato ficar esperando o resultado
+  dela, de maneira assíncrona, e vamos recebendo essas respostas à medida em que o servidor for
+   conseguindo processar.
