@@ -1,0 +1,19 @@
+O protocolo HTTP possui operações através de métodos como: GET, POST, PUT e DELETE.
+
+Cada método tem uma semântica diferente e juntando o método à URI deveríamos conseguir representar todas as ações do nosso sistema.
+
+As semânticas principais são:
+
+GET - recupera informações sobre o recurso identificado pela URI. Ex: listar restaurante, visualizar o restaurante 1. Uma requisição GET não deve modificar nenhum recurso do seu sistema, ou seja, não deve ter nenhum efeito colateral, você apenas recupera informações do sistema.
+
+POST - adiciona informações usando o recurso da URI passada. Ex: adicionar um restaurante. Pode adicionar informações a um recurso ou criar um novo recurso.
+
+PUT - adiciona (ou modifica) um recurso na URI passada. Ex: atualizar um restaurante.
+
+DELETE - remove o recurso representado pela URI passada. Ex: remover um restaurante.
+
+REST é um padrão arquitetural para comunicações entre aplicações
+Ele aproveita a estrutura do HTTP
+Recursos são definidos via URI
+Operações com métodos HTTP(GET/POST/PUT/DELETE)
+Cabeçalhos(Accept/Content-Type) são usados para especificar as representações(JSON,XML,...)

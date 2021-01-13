@@ -1,0 +1,29 @@
+Quando passamos os parâmetros da requisição na URL, estamos fazendo uso do método GET.
+O que é super útil quando precisamos repetir a requisição com os mesmos parâmetros.
+
+Quando enviamos parâmetros na URL,
+devemos iniciar pelo ?, o nome do parâmetro e um =,
+para separar o nome do parâmetro do seu valor: ?nome_do_parametro=seu_valor
+
+GET é normalmente usado para pesquisas, 
+mas isso depende um pouco de como a plataforma e o desenvolvedor usam esse método.
+ Na vida real, vocês vão encontrar muitos exemplos que usam requisições do tipo GET,
+não só para pesquisas.
+
+O protocolo HTTP define que o GET deve ser utilizado apenas para acessar os dados, mas HTTP, 
+como protocolo, não pode impedir o desenvolvedor de fazer algo diferente.
+
+Utilizando o método GET, tanto o login quanto a senha seriam passados como parâmetro na URL,
+ coisa que não queremos que aconteça. O método POST deixa os parâmetros no corpo da requisição,
+ assim evita que informações importantes, como a senha, fiquem explícitas na URL.
+
+ Logo, o POST foi utilizado para que se enviasse os valores do formulário no corpo da requisição.
+
+ Requisições HTTP podem ser enviadas através de qualquer aplicativo/software que entenda o protocolo.
+
+ HTTP é totalmente independente do formato dos dados.
+
+ Através dele podemos usar algum formato específico como:
+
+Accept: text/html, Accept: text/css, Accept: application/xml,
+ Accept: application/json, Accept:image/jpeg e Accept: image/*COPIAR C

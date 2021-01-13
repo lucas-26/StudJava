@@ -1,0 +1,28 @@
+O código 200 significa OK, ou Sucesso,
+que não houve nenhum problema no processamento da requisição e ela foi bem sucedida.
+
+
+2xx - Resposta bem sucedida!
+
+O código da resposta é 302.
+
+Correto, o código aparece na resposta. O código 302 significa Movido Temporariamente.
+
+
+404 é o código clássico que indica que o recurso não foi encontrado.
+Em geral, a classe 4xx indica que o cliente errou algo na requisição.
+
+Nesse caso o código de resposta é 403(não permitido): o cliente não tem a permissão.
+
+
+A classe 5xx significa que houve algum problema no servidor.
+
+Por exemplo: 500 - Internal Server Error, ou outro famoso: 503 - Service Unavailable.
+
+200, 203, 207 -> Respostas de Sucesso
+
+300, 301, 302 -> Mensagem de redirecionamento
+
+401, 404, 405 -> Respostas de erro do cliente
+
+500, 502, 503 -> Respostas de erro do servidor

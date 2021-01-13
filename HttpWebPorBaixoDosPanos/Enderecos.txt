@@ -1,0 +1,11 @@
+O domínio é o nome do site na Web.
+Ele facilita a navegação do usuário, que não precisa lembrar o IP de cada site.
+
+O DNS tem como função realizar a tradução do
+nome de um domínio para o endereço de IP correspondente.
+
+URL são os endereços da Web
+Uma URL começa com o protocolo (por exemplo https://) seguido pelo domínio (www.alura.com.br)
+Depois do domínio pode vir a porta, se não for definida é utilizada a porta padrão desse protocolo
+Após o domínio:porta, é especificado o caminho para um recurso (/course/introducao-html-css)
+Um recurso é algo concreto na aplicação que queremos acessar

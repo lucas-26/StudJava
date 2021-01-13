@@ -1,0 +1,7 @@
+O HTTP é um protocolo que define as regras de comunicação entre cliente e servidor na internet. 
+Vamos focar nos próximos vídeos e entender melhor esse protocolo tão importante.
+
+
+Um protocolo é um conjunto de regras
+HTTP é um protocolo que define as regras de comunicação entre cliente e servidor na internet.
+HTTP é o protocolo mais importante da Internet.
