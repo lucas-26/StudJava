@@ -14,7 +14,7 @@ import br.com.alura.jpa.modelo.TipoMovimentacao;
 public class TestaRelacionamento {
 
 	public static void main(String[] args) {
-		
+
 		 Conta conta = new Conta();
 		 conta.setAgencia(854862);
 		 conta.setNumero(658415);
