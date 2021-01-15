@@ -27,6 +27,7 @@ public class AlteraSaldoConta {
 		
 		entityManager2.getTransaction().begin();
 		entityManager2.merge(contaLucas); //fazendo isso o contalucas passa do estado detached para o estados managed, ou seja o jpa consegue manipular e fazer alterações novamente.
+										//o merge é mais lento que o "persistence()" pq o merge primeiro faz o select de dps o update ou insert, no caso o persist já insere. 
 		entityManager2.getTransaction().commit();
 		
 		entityManager2.close();
