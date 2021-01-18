@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.*;
 
+import org.springframework.data.domain.Page;
+
 import br.com.alura.forum.modelo.Topico;
 
 public class TopicoDto { //DATA TRANSFER OBJECT - Usamos as classes desse tipo para fazer o "response" pois aqui só tem as informações que queremos mostrar, é uma classe bin, diferente da classe tópico que é uma entity, ou seja... usamos a classe dto para expor os dados que nós queremos mostrar nesse caso é um dto para pegar os dados, tratar e mostrar na resposta 
@@ -32,8 +34,8 @@ public class TopicoDto { //DATA TRANSFER OBJECT - Usamos as classes desse tipo p
 		return dataCriacao;
 	}
 	
-	public static List<TopicoDto> converter(List<Topico> topico) {
-		return topico.stream().map(TopicoDto::new).collect(Collectors.toList());
+	public static Page<TopicoDto> converter(Page<Topico> topico) {
+		return topico.map(TopicoDto::new);
 	}
 	
 }
