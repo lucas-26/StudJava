@@ -18,8 +18,10 @@ public class TesteJPQLMovimentacaoDeUmaCategoria {
 		EntityManagerFactory emf = new Persistence().createEntityManagerFactory("contas");
 		EntityManager entityManager =  emf.createEntityManager();		
 		
-		String queryjpql = "select m from Movimentacao m join m.categoria c where c = :pCategoria"; //<- isso é um queri jpql
+		String queryjpql = "select m from Movimentacao m join m.categoria c where c = :pCategoria"; //<- isso ï¿½ um queri jpql :pCategoria Ã© o nome do parametro, aqui tambÃ©m Ã© feito o join
 		 
+		String queryjpql = "select m from Movimentacao m join m.categoria c where c = :pCategoria desc"; //<- Query que retorna os registros na ordem decressente
+
 		Categoria categoria = new Categoria();
 		categoria.setId(2L);
 		TypedQuery<Movimentacao> query = entityManager.createQuery(queryjpql, Movimentacao.class);
@@ -28,7 +30,7 @@ public class TesteJPQLMovimentacaoDeUmaCategoria {
 		List<Movimentacao> result = query.getResultList();
 		for (Movimentacao movimentacao : result) {
 			System.out.println("Categorias: "+ movimentacao.getCategoria());
-			 System.out.println("Descrição: "+ movimentacao.getDescricao());
+			 System.out.println("Descriï¿½ï¿½o: "+ movimentacao.getDescricao());
 			 System.out.println("Valor: "+ movimentacao.getValor());
 			 System.out.println("Tipo: "+ movimentacao.getTipoMovimentacao());
 

@@ -16,18 +16,18 @@ public class AlteraSaldoConta {
 		
 		entityManager.getTransaction().begin();
 		
-		contaLucas.setSaldo(50.0); //nesse momento a "contaLucas" está no estado de managed ou seja o jpa sabe os dados dela e consegue fazer alterações como quiser. 
+		contaLucas.setSaldo(50.0); //nesse momento a "contaLucas" estï¿½ no estado de managed ou seja o jpa sabe os dados dela e consegue fazer alteraï¿½ï¿½es como quiser. 
 		
 		entityManager.getTransaction().commit();
 		entityManager.close();
 		
-		contaLucas.setSaldo(2550.0);//aqui nesse momento está no estado de detached, o jpa se lembra dos dados dessa conta mas, não consegue fazer mais nenhuma alteração
+		contaLucas.setSaldo(2550.0);//aqui nesse momento estï¿½ no estado de detached, o jpa se lembra dos dados dessa conta mas, nï¿½o consegue fazer mais nenhuma alteraï¿½ï¿½o
 		
 		EntityManager entityManager2 =  emf.createEntityManager();
 		
 		entityManager2.getTransaction().begin();
-		entityManager2.merge(contaLucas); //fazendo isso o contalucas passa do estado detached para o estados managed, ou seja o jpa consegue manipular e fazer alterações novamente.
-										//o merge é mais lento que o "persistence()" pq o merge primeiro faz o select de dps o update ou insert, no caso o persist já insere. 
+		entityManager2.merge(contaLucas); //fazendo isso o conta lucas passa do estado detached para o estados managed, ou seja o jpa consegue manipular e fazer alteraï¿½ï¿½es novamente.
+										//o merge ï¿½ mais lento que o "persistence()" pq o merge primeiro faz o select de dps o update ou insert, no caso o persist jï¿½ insere. 
 		entityManager2.getTransaction().commit();
 		
 		entityManager2.close();

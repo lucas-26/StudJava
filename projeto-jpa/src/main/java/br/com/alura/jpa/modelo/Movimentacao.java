@@ -20,14 +20,14 @@ public class Movimentacao {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING)//informando o jpa que isso é uma arquivo enum do tipó string
 	private TipoMovimentacao tipoMovimentacao;
 	private LocalDateTime data;
 	private String descricao;
 	private BigDecimal valor;
-	@ManyToOne
+	@ManyToOne //relação com a tabela conta, muitos para um, várias movimentacoes podem fazer parte de uma conta
 	private Conta conta;
-	@ManyToMany
+	@ManyToMany//relação com a tabela categoria, muitos para muitos, muitas movimentações podem fazer parte de várias categorias.
 	private List<Categoria> categoria;
 	
 	public Long getId() {
