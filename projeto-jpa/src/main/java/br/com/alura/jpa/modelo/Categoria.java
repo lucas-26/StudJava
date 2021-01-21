@@ -26,7 +26,7 @@ public class Categoria {
 		this.nome = nome;
 	}
 	
-	@Deprecated
+	@Deprecated //informando que esse construtor deve ser ignorado, só serve para fins de infraestrutura para o hibernate
 	public Categoria() {
 		
 	}

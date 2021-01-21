@@ -17,8 +17,8 @@ public class Cliente {
 	private String profissao;
 	private String endereco;
 	
-	@JoinColumn(unique = true)//informando 	que essa chave estrangeira � unica obrigatoriamente, n�o pode se repetir
-	@OneToOne
+	@JoinColumn(unique = true)//informando ao jpa que ao criar a tabela para de relacionamento que essa chave estrangeira é unica obrigatoriamente, não pode se repetir
+	@OneToOne				 // esse comando só surte efeito na criação da tabela, caso você queira colocar essa validação após a tabela estar criada, é necessário dropar a tabela.
 	private Conta conta;
 	
 	public Long getId() {
