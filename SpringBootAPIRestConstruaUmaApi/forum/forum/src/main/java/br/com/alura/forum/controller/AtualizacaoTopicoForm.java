@@ -35,7 +35,7 @@ public class AtualizacaoTopicoForm {
 	}
 
 	public Topico  atualizar(Long id, TopicoRepository topicoRepository) {
-		Topico topico = topicoRepository.getOne(id);
+		Topico topico = topicoRepository.getOne(id); // esse método getOne diferente do FIndById Considera que exista esse registro no banco de dados e por isso quando ele não encontra ele não retorna null e sim uma exception
 		
 		topico.setTitulo(this.titulo);
 		topico.setMensagem(this.mensagem);

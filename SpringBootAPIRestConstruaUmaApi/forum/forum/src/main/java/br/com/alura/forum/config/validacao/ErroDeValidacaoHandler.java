@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestControllerAdvice				//ao marcar essa classe com a anotação @RestControllerAdvice estou informando para o sprign que essa classe é que vai fazer o tratamento de resposta de erro em qualquer controller.
+@RestControllerAdvice//ao marcar essa classe com a anotação @RestControllerAdvice estou informando para o sprign que essa classe é que vai fazer o tratamento de resposta de erro em qualquer controller.
 public class ErroDeValidacaoHandler { 
 	
 	@Autowired
-	private MessageSource messageSource;
+	private MessageSource messageSource;//essa classe é do spring, ajuda a pegar mensagens de erro e ajuda na resposta, ao responder para o cliente, a menssagem será lançada no idioma do servidor
 	
 	@ResponseStatus(code = HttpStatus.BAD_REQUEST)//informando o spring que a resposta deve ser um bad request
 	@ExceptionHandler(MethodArgumentNotValidException.class)//informando para o string que se essa exception  MethodArgumentNotValidException  for lançada, esse método handler deve ser chamado
