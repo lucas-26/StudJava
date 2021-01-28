@@ -14,8 +14,8 @@ import br.com.alura.forum.repository.CursoRepository;
 
 public class TopicoForm { //DATA TRANSFER OBJECT também é um arquivo dto mas, nesse caso são tratados os dados que chegam para a api 
 	
-	@NotNull @NotEmpty @Length(min = 5) //usando o bean validation informando que o campo não pode ser nulo, não pode ser vazio e tem que tem no minimo 5 caracteres
-	private String titulo;
+	@NotNull @NotEmpty @Length(min = 5) //usando o bean validation informando que o campo não pode ser nulo,
+	private String titulo;				// não pode ser vazio e tem que tem no minimo 5 caracteres
 	@NotNull @NotEmpty @Length(min = 5)
 	private String mensagem;
 	@NotNull @NotEmpty @Length(min = 5)

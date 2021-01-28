@@ -8,9 +8,9 @@ import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSpringDataWebSupport
+@EnableSpringDataWebSupport//Ativando para poder usar paginação de uma maneira mais fácil no controller, usando a classe Pageable
 @EnableCaching//Ativando o uso de cache na aplicação
-@EnableSwagger2
+@EnableSwagger2//Ativando a utilização do swagger
 public class ForumApplication {
 
 	public static void main(String[] args) {
