@@ -1,0 +1,28 @@
+docker ps -> ver os containers que estão em execução
+docker ps -a -> ver todos os containers que já foram executados
+docker start 254cf741f081 -> tira do estado de parado e volta para o estado de execuçao o container
+docker start -a -i 254cf741f081 -> inicia o container atrelando o meu cmd com o container
+docker start  254cf741f081 -> inicia o container que estava parado
+docker stop 254cf741f081 -> para o container 
+docker run "nome do container" -> executa o container 
+docker rm  9e228ac0609a "nome do container" -> apaga o container 
+docker container prune -> apaga todos os containers inativos
+docker images -> mostra todas as imagens 
+docker rmi hello-world -> remove uma imagem especifica
+docker run dockersamples/static-site -> quando o repositorio do docker não é oficial, é cuidado por uma pessoa precisamos colcar o username/nome do repositorio
+docker run -d dockersamples/static-site -> vai rodar esse container mas não vai travar o terminal, vai rodar esse container em background
+docker run -d -P dockersamples/static-site -> com esse comando o docker adiciona uma porta para que o navegador possa acessar esse site estatico 
+docker port "Id do container" -> com esse comando é possível ver quais portas esse container está usando.
+docker run -d -P --name meu  dockersamples/static-site -> para não depender do nome ou do id do container usando esse comando é possivel dar um apelido para esse meu container
+docker run -d -p 1234:80  dockersamples/static-site  -> falando para o docker que minha porta 1234 deve ser a porta 80 do container
+docker ps -q -> retorna somente os ids do dos containers
+docker stop $(docker ps -q) -> vai parar tudo que o comando retornar, ou seja todos os ids que esse comando retornar vai ser parado.
+docker run -v "/var/www" ubuntu -> criando um container com a imagem do ubunto com uma copia no docker host com o caminho passado no <- usado para criar volumes
+docker inspect d8e -> informando que eu quero inspecionar o container <- usado para criar volumes
+docker run -v "C:desktop:/var/www" ubuntu -> criando um container com a imagem do ubunto com uma copia no docker host com o caminho passado no e informando que o que for escrito em www deve ser salvo em desktop <- usado para criar volumes
+docker run -p 8080:3000 -v "C:\Users\lucas.rocha\Desktop\volume-exemplo\volume-exemplo:/var/www" -w "/var/www" node npm start -> iniciando o docker com a imagem do node informando que o que está na pasta c:Desktop... e vai colocar na pasta www que está no docker host em seguida vai executar o npm start e informando que a porta 8080 da minha aplicação é equivalente a porta 3000 dentro do container e por ultimo com -w informando onde os comandos do node devem ser executado, nesse caso é dentro da pasta /var/www
+docker rm -f 30c -> esse comando para e remove esse container
+docker run -d -p 1234:3000 lucasa/node -> executando a minha imagem, informando que ela roda na porta 3000 e que ela deve ser exposta na porta 1234
+docker login -> fazer login no docker hub
+docker push "nome da imagem" -> fazendo o commit da imagem para o docker hub
+docker pull "nome da imagem" -> baixando a imagem 

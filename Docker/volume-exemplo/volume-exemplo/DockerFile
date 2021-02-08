@@ -1,0 +1,14 @@
+#apontando para que o docker monte meu container a partir de uma imagem, nesse caso a imagem do node
+FROM node:latest 
+#informando quem dá manutenção nessa imagem 
+MAINTAINER lucas 
+#informando que tudo que esta dentro de volume exemplo usando ., vai estar dentro de /var/www 
+COPY . /var/www 
+#assim que minha aplicação carregar, o npm install e o npm start deve ser executado nessa pasta
+WORKDIR /var/www
+#informando o comando que dever ser executado para buildar minha aplicação 
+RUN npm install 
+#informando o comando que dever ser executado após o meu código ser buildado
+ENTRYPOINT npm start 
+#informando o endereço que meu container deve expor a aplicação
+EXPOSE 3000 
