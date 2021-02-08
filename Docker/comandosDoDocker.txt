@@ -26,3 +26,9 @@ docker run -d -p 1234:3000 lucasa/node -> executando a minha imagem, informando 
 docker login -> fazer login no docker hub
 docker push "nome da imagem" -> fazendo o commit da imagem para o docker hub
 docker pull "nome da imagem" -> baixando a imagem 
+docker network create --driver bridge minha-rede -> criando minha rede para comunicacao de containers usando o driver bridge e no nome é "minha-rede"
+docker network ls -> ver as networks que existem no meu docker 
+docker run -it --name meu-container-ubuntu --network minha-rede ubuntu -> criando um container iterativo com o nome de meu-container-ubuntu na rede minha-rede e usando a imagem do ubuntu
+docker-compose build ->  pegar o arquivo de compose que eu criei e vai buildar 
+docker-compose up -> vai executar o script e vai criar todos os serviços que estão no arquivo
+
